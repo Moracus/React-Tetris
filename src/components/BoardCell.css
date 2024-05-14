@@ -1,0 +1,53 @@
+.BoardCell {
+  width: auto;
+  border-radius: 0.4rem;
+  border: 1px dashed rgba(244, 244, 244, 0.332);
+}
+
+.tetromino {
+  border: 0.01rem solid white;
+}
+
+.tetromino .Sparkle {
+  z-index: 10;
+  width: 6px;
+  height: 6px;
+  left: -2px;
+  top: -2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px 4px;
+}
+
+.tetromino.ghost {
+  background-color: transparent;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.tetromino.ghost .Sparkle {
+  opacity: 0;
+}
+
+/* @media (max-width: 720px) {
+    
+} */
+.tetromino__i {
+  background-color: #0341ae;
+}
+.tetromino__j {
+  background-color: #72cb3b;
+}
+.tetromino__l {
+  background-color: #ffd500;
+}
+.tetromino__o {
+  background-color: #ff971c;
+}
+.tetromino__s {
+  background-color: #ff3213;
+}
+.tetromino__t {
+  background-color: #219ebc;
+}
+.tetromino__z {
+  background-color: #023047;
+}

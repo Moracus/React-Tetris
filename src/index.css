@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  color: #fff;
+
+  height: 100vh;
+  padding: 1.5rem;
+  background: black;
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+}
+.image {
+  position: absolute;
+  object-fit: contain;
+  z-index: 0;
+}

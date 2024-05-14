@@ -1,0 +1,10 @@
+.GameController {
+  position: absolute;
+  top: 0%;
+  min-height: 100%;
+  min-width: 100%;
+}
+input {
+  position: absolute;
+  top: -100em;
+}

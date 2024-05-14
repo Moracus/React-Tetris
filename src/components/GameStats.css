@@ -1,0 +1,15 @@
+.GameStats {
+  list-style-type: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.GameStats .value {
+  color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 720px) {
+  .GameStats {
+    display: flex;
+    justify-content: space-around;
+  }
+}

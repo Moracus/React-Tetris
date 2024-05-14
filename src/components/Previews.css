@@ -1,0 +1,12 @@
+.Previews {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media (max-width: 720px) {
+  .Previews {
+    flex-direction: row;
+    height: auto;
+  }
+}
