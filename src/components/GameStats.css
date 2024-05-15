@@ -1,10 +1,19 @@
 .GameStats {
+  color: rgb(254, 254, 254);
+  text-align: left;
+
+  align-self: flex-start;
+}
+.GameStats ul {
   list-style-type: none;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .GameStats .value {
-  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+}
+
+.GameStats li {
+  font-weight: bold;
 }
 
 @media (max-width: 720px) {

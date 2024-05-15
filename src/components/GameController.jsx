@@ -19,22 +19,40 @@ const GameController = ({
 
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  const [doubleTap, setDoubleTap] = useState(false);
+  const [lastPress, setLastPress] = useState(0);
   const minSwipeDistance = 50;
 
   const onTouchStart = (e) => {
     setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
     setTouchStart(e.targetTouches[0]);
+    const time = new Date().getTime();
+    const timeSinceLastTap = time - lastPress;
+    if (timeSinceLastTap < 400) {
+      // Double tap detected
+      console.log("doubleTap");
+      setDoubleTap(true);
+
+      handleInput({ action: Action.Rotate });
+    } else {
+      setDoubleTap(false);
+    }
+    setLastPress(time);
   };
   const onTouchMove = (e) => setTouchEnd(e.targetTouches[0]);
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
+    console.log("touchEnd");
+
     const xDistance = touchStart.clientX - touchEnd.clientX;
     const yDistance = touchStart.clientY - touchEnd.clientY;
 
     const isLeftSwipe = xDistance > minSwipeDistance;
     const isRightSwipe = xDistance < -minSwipeDistance;
     const isSwipeDown = yDistance < -minSwipeDistance;
+
     if (isLeftSwipe) handleInput({ action: Action.Left });
     else if (isRightSwipe) handleInput({ action: Action.Right });
     else if (isSwipeDown) handleInput({ action: Action.FastDrop });
